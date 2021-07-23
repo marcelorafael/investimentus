@@ -1,0 +1,4 @@
+#Fri Jul 23 18:51:59 BRT 2021
+base.0=/home/marcelorafael/projetos/MR/investimentus/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

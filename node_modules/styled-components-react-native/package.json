@@ -1,0 +1,8 @@
+{
+  "name": "styled-components-react-native",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Methuselah96/styled-components-react-native.git",
+  "author": "Nathan Bierema <nbierema@gmail.com>",
+  "license": "MIT"
+}
