@@ -13,6 +13,7 @@ MERGED from [:react-native-gesture-handler] /home/marcelorafael/projetos/MR/inve
 MERGED from [:react-native-reanimated] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-svg] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-svg/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-vector-icons] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.63.4] /home/marcelorafael/.gradle/caches/transforms-2/files-2.1/5bb659e41bbb21765c98c5e97bb28d2d/jetified-react-native-0.63.4/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/marcelorafael/.gradle/caches/transforms-2/files-2.1/37b6f551bc5ae153b0b627de8f563815/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -174,6 +175,8 @@ MERGED from [:react-native-safe-area-context] /home/marcelorafael/projetos/MR/in
 MERGED from [:react-native-safe-area-context] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-svg] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-svg/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-svg/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-vector-icons] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] /home/marcelorafael/projetos/MR/investimentus/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.63.4] /home/marcelorafael/.gradle/caches/transforms-2/files-2.1/5bb659e41bbb21765c98c5e97bb28d2d/jetified-react-native-0.63.4/AndroidManifest.xml:7:5-9:41
