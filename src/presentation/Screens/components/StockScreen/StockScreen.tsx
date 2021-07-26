@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { ActivityIndicator, View } from 'react-native';
-import { Animated } from 'react-native'
+import React, { useState } from 'react'
+
 import { format } from 'date-fns'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {
@@ -13,49 +12,38 @@ import {
   BtnSearch,
   CenterView,
 } from './StockScreen.styles';
-import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie';
 
 const date = format(new Date(), 'dd/MM/yyyy');
 
-console.log(date)
+interface StockScreenProps {
+  value: string
+  children: React.ReactElement
+  placeholder: string
+  onChangeText: () => void
+  onPress: () => void
+}
 
-const StockScreen: React.FC = () => {
-  const [centerView, setCenterView] = useState(false);
-  const [activity, setActivity] = useState(true);
+const StockScreen: React.FC<StockScreenProps> = (
+  props: StockScreenProps
+) => {
+  const { value, placeholder, children, onChangeText, onPress } = props;
 
 
   return (
     <Container>
       <Header>
         <Input
+          value={value}
+          onChangeText={onChangeText}
+          placeholder={placeholder}
         />
-        <BtnSearch>
+        <BtnSearch onPress={onPress}>
           <Icon name="search" color="#FFF" size={20} />
         </BtnSearch>
       </Header>
 
       <CenterView>
-        {
-          centerView === false
-            ? activity
-              ? <ActivityIndicator color="#37E39F" size={60} />
-              : <Icon name="usd" color="#FFF" size={100} />
-            : <>
-              <DetailsCurrencie
-                change_percert=""
-                close=""
-                open=""
-                company_name=""
-                currency=""
-                description=""
-                market_cap=""
-                name=""
-                price=""
-                region=""
-                symbol=""
-              />
-            </>
-        }
+        {children}
       </CenterView>
 
       <Footer>

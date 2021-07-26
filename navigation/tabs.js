@@ -8,8 +8,8 @@ import {
 } from "react-native";
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 
-import { Home } from "../src/presentation/Screens/Home/Home"
-import { COLORS, FONTS, icons } from "../constants"
+import { StockScreenPresenter } from '../src/presentation/Screens/components/StockScreen/container/StockScreenPresenter';
+// import { COLORS, FONTS, icons } from "../constants"
 
 const Tab = createBottomTabNavigator()
 
@@ -17,41 +17,27 @@ const Tabs = () => {
     return (
         <Tab.Navigator>
             <Tab.Screen
-                name="Home"
-                component={Home}
+                name="StockScreen"
+                component={StockScreenPresenter}
             />
             <Tab.Screen
                 name="Portfolio"
-                component={Home}
+                component={StockScreenPresenter}
             />
             <Tab.Screen
                 name="Transaction"
-                component={Home}
+                component={StockScreenPresenter}
             />
             <Tab.Screen
                 name="Prices"
-                component={Home}
+                component={StockScreenPresenter}
             />
             <Tab.Screen
                 name="Settings"
-                component={Home}
+                component={StockScreenPresenter}
             />
         </Tab.Navigator>
     )
 }
-
-const styles = StyleSheet.create({
-    shadow: {
-        shadowColor: COLORS.primary,
-        shadowOffset: {
-            width: 0,
-            height: 10,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5
-    }
-})
 
 export default Tabs;
