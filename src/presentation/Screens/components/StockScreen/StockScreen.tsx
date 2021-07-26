@@ -19,7 +19,7 @@ interface StockScreenProps {
   value: string
   children: React.ReactElement
   placeholder: string
-  onChangeText: () => void
+  onChangeText: (text: string) => void
   onPress: () => void
 }
 

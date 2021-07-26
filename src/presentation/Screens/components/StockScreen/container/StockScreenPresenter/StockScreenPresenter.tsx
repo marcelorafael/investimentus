@@ -4,16 +4,27 @@ import { StockScreen } from '../../StockScreen'
 import { Container } from './StockScreenPresenter.styles';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { DetailsCurrencie } from '../../../../../Base/components/DetailsCurrencie';
+import { Alert } from 'react-native';
 
 const StockScreenPresenter: React.FC = () => {
 
   const [centerView, setCenterView] = useState(false);
-  const [activity, setActivity] = useState(true);
+  const [activity, setActivity] = useState(false);
+  const[teste, setTeste] = useState('')
+
+  const handleStock = () => {
+    return Alert.alert('Investimentus','teste')
+  }
 
   return (
     <Container>
       <StatusBar barStyle="dark-content" backgroundColor="#218c74" />
-      <StockScreen onPress={() => alert('teste')}>
+      <StockScreen 
+        onPress={() => handleStock()}
+        placeholder="exemplo: bidi4..."
+        onChangeText={(text: string) => setTeste(text)}
+        value={teste}
+      >
         <>
         {
           centerView === false
