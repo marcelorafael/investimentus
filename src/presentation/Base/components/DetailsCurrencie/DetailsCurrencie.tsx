@@ -48,8 +48,14 @@ const DetailsCurrencie: React.FC<DetailsCurrencieProps> = (
         </WrapperDescriptions>
 
         <WrapperDescriptions>
-          <Description>{currency}</Description>
-          <Description>{region}</Description>
+          <View>
+            <DescriptionTitle>Moeda</DescriptionTitle>
+            <Description>{currency}</Description>
+          </View>
+          <View style={{alignItems:'flex-end'}}>
+            <DescriptionTitle>Região</DescriptionTitle>
+            <Description>{region}</Description>
+          </View>
         </WrapperDescriptions>
 
         <WrapperDescriptions>

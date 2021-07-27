@@ -4,7 +4,6 @@ import { StockScreen } from '../../StockScreen'
 import { 
   Container, 
   TextBody,
-  TextDetails,
 } from './StockScreenPresenter.styles';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { DetailsCurrencie } from '../../../../../Base/components/DetailsCurrencie';
@@ -17,7 +16,7 @@ const StockScreenPresenter: React.FC = () => {
   const [centerView, setCenterView] = useState(false);
   const [activity, setActivity] = useState(false);
   const [value, setValue] = useState('');
-  const [result, setResult] = useState(false);
+  const [result, setResult] = useState([]);
 
   async function handleStock(data: string) {
     Keyboard.dismiss()
@@ -33,30 +32,15 @@ const StockScreenPresenter: React.FC = () => {
 
       const keys: any = Object.entries(stock)
 
-      const stockAdapter = () => {
-
-        return [{
-          percent: keys[0][1].change_percent,
-          market_cap: keys[0][1].market_cap,
-          name: keys[0][1].name,
-          symbol:  keys[0][1].symbol,
-          currency: keys[0][1].currency,
-          price: keys[0][1].price,
-          open: keys[0][1].market_time.open,
-          close: keys[0][1].market_time.close,
-          description: keys[0][1].description,
-          companyName: keys[0][1].company_name,
-          region: keys[0][1].region
-        }]
-      }
-
-        let adapter: any = stockAdapter();
-
+       let adapter: any = [];
+       adapter = [keys[0][1]]
        setResult(adapter)
 
        setCenterView(true)
+
        
-      console.log(keys[0][1])
+       
+      console.log(result)
     } catch (error) {
       console.log(error)
       setCenterView(false)
@@ -87,9 +71,9 @@ const StockScreenPresenter: React.FC = () => {
               {result.map((item: any) => (
                 <DetailsCurrencie
                   key={item.name}
-                  change_percert={item.percent}
-                  close={item.close}
-                  open={item.open}
+                  change_percert={item.change_percent}
+                  close={item.market_time.close}
+                  open={item.market_time.open}
                   company_name={item.companyName}
                   currency={item.currency}
                   description={item.description}
