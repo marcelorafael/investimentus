@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './ChartHeader.styles';
-import { Dimensions } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import {
   BarChart,
 } from "react-native-chart-kit";
@@ -33,15 +33,17 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
 
   return (
     <Container>
+      <View>
         <BarChart
-          style={{ alignItems: 'center', width:'100%' }}
+          style={{ width:'100%' }}
           data={data}
           width={screenWidth}
-          height={250}
-          yAxisLabel="$"
+          height={375}
+          yAxisLabel=""
           chartConfig={chartConfig}
-          verticalLabelRotation={15}
+          verticalLabelRotation={55}
         />
+      </View>
     </Container>
   )
 }

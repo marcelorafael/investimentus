@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { StatusBar, ActivityIndicator, Keyboard, View } from 'react-native'
-import { StockScreen } from '../../StockScreen'
+import { StockScreen } from '../../components/StockScreen'; 
 import { 
   Container, 
   TextBody,
 } from './StockScreenPresenter.styles';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { DetailsCurrencie } from '../../../../../Base/components/DetailsCurrencie';
+import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie';
 
-import Stocks from '../../../../../../services/axios/GetDatas/Stocks';
+import Stocks from '../../../../services/axios/GetDatas/Stocks';
 import { Alert } from 'react-native';
 
 const StockScreenPresenter: React.FC = () => {

@@ -9,6 +9,7 @@ import {
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 
 import { StockScreenPresenter } from '../src/presentation/Screens/components/StockScreen/container/StockScreenPresenter';
+import { CurrencieScreenPresenter } from '../src/presentation/Screens/container/CurrencieScreenPresenter';
 // import { COLORS, FONTS, icons } from "../constants"
 
 const Tab = createBottomTabNavigator()
@@ -21,8 +22,8 @@ const Tabs = () => {
                 component={StockScreenPresenter}
             />
             <Tab.Screen
-                name="Portfolio"
-                component={StockScreenPresenter}
+                name="CurrencieScreenPresenter"
+                component={CurrencieScreenPresenter}
             />
             <Tab.Screen
                 name="Transaction"
