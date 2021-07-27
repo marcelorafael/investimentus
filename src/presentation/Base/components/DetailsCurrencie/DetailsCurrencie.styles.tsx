@@ -36,7 +36,8 @@ color: ${props => props?.theme?.COLORS?.white ?? '#FFF'};
 export const Footer = styled.View`
 background-color: ${props => props?.theme?.COLORS?.lightGray1 ?? '#FFF'};
 width: 100%;
-height: 80px;
+min-height: 80px;
+max-height: 200px;
 
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
