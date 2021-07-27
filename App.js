@@ -11,5 +11,5 @@ const App = () => {
   )
 }
 
-// export default require('./storybook').default
-export default App
+export default require('./storybook').default
+// export default App

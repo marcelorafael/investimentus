@@ -6,9 +6,7 @@ interface WrapperProps {
   background: string
 }
 
-export const Wrapper = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
-})<WrapperProps>`
+export const Wrapper = styled.View<WrapperProps>`
 border-radius: ${props => props?.theme?.SIZES?.radius ?? 12}px;
 background-color: ${props => props.background};
 padding: 20px;
