@@ -56,7 +56,7 @@ const StockScreenPresenter: React.FC = () => {
 
        setCenterView(true)
        
-      console.log(stock)
+      console.log(keys[0][1])
     } catch (error) {
       console.log(error)
       setCenterView(false)
@@ -74,7 +74,7 @@ const StockScreenPresenter: React.FC = () => {
         onChangeText={(text: string) => setValue(text)}
         value={value}
       >
-        <>
+        <View style={{marginTop:10}}>
         {
           centerView === false
             ? activity
@@ -84,22 +84,25 @@ const StockScreenPresenter: React.FC = () => {
                   <TextBody>Investimentus</TextBody>
                 </View>
             : <>
-              <DetailsCurrencie
-                change_percert={result[0].percent}
-                close={result[0].close}
-                open={result[0].open}
-                company_name={result[0].companyName}
-                currency={result[0].currency}
-                description={result[0].description}
-                market_cap={result[0].market_cap}
-                name={result[0].name}
-                price={result[0].price}
-                region={result[0].region}
-                symbol={result[0].symbol}
-              />
+              {result.map((item: any) => (
+                <DetailsCurrencie
+                  key={item.name}
+                  change_percert={item.percent}
+                  close={item.close}
+                  open={item.open}
+                  company_name={item.companyName}
+                  currency={item.currency}
+                  description={item.description}
+                  market_cap={item.market_cap}
+                  name={item.name}
+                  price={item.price}
+                  region={item.region}
+                  symbol={item.symbol}
+                />
+              ))}
             </>
         }
-        </>
+        </View>
       </StockScreen>
     </Container>
   )

@@ -6,6 +6,7 @@ export const Container = styled(LinearGradient).attrs({
 })`
 
 width: 300px;
+max-width: 400px;
 max-height: 500px;
 
 padding-top: 7px;
