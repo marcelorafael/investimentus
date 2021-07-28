@@ -46,6 +46,7 @@ const CurrencieScreenPresenter: React.FC = () => {
       :<><ChartHeader
         labels={stocksName.map((item: any) => item)}
         datasets={[{ data: stocks}]}
+        legend={["Pontos na bolsa"]}
       />
 
       <Card

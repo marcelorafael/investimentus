@@ -23,9 +23,9 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
   };
 
   const chartConfig = {
-    backgroundGradientFrom: "#1E2923",
+    backgroundGradientFrom: "#37E39F",
     backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#08130D",
+    backgroundGradientTo: "#5D2DFD",
     backgroundGradientToOpacity: 0.5,
     color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
     strokeWidth: 2, // optional, default 3
@@ -47,10 +47,13 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
           verticalLabelRotation={55}
         /> */}
         <LineChart
+          style={{paddingBottom:35}}
           data={data}
           width={screenWidth}
           height={220}
           chartConfig={chartConfig}
+          horizontalLabelRotation={-55}
+          verticalLabelRotation={55}
         />
       </View>
     </Container>
