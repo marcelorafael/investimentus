@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { Keyboard, ActivityIndicator } from 'react-native';
+import { Keyboard, ActivityIndicator, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../../../Base/components/Card';
 import { ChartHeader } from '../../../Base/components/ChartHeader';
-import { Container } from './CurrencieScreenPresenter.styles';
+import { 
+  Container,
+  CenterViewCard, 
+  TextTaxes 
+} from './CurrencieScreenPresenter.styles';
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
 
 const CurrencieScreenPresenter: React.FC = () => {
   const [activity, setActivity] = useState(false);
   const [stocks, setStocks] = useState([]);
   const [stocksName, setStocksName] = useState([]);
+  const [taxes, setTaxes] = useState([]);
+  const [taxesName, setTaxesName] = useState([]);
   let entriesStocks = []
 
   useEffect(() => {
@@ -19,7 +26,8 @@ const CurrencieScreenPresenter: React.FC = () => {
   
       try {
         const response = await Stocks('/?key=34664f77');
-  
+        
+        // Datas Stocks
         const keysStocks: any = Object.keys(response.stocks);
         setStocksName(keysStocks);
         entriesStocks = Object.entries(response.stocks);
@@ -28,8 +36,22 @@ const CurrencieScreenPresenter: React.FC = () => {
         // adapterStocks = [{ data: entriesStocks.map((item: any) => item[1].points)}]
         adapterStocks = entriesStocks.map((item: any) => item[1].points)
         setStocks(adapterStocks)
-         
-        console.log(stocks)
+        
+        // Datas Taxes
+        const adapterTaxes: any = [
+          {name:'cdi', value: response.taxes[0].cdi},
+          {name:'cdi dia', value: response.taxes[0].cdi_daily},
+          {name:'fator dia', value: response.taxes[0].daily_factor},
+          {name:'selic', value: response.taxes[0].selic},
+          {name:'selic dia', value: response.taxes[0].selic_daily},
+        ]
+
+        
+
+        setTaxes(adapterTaxes)
+
+        // setTaxesName()
+        console.log(adapterTaxes)
       } catch (error) {
         console.log(error);
       }
@@ -46,16 +68,29 @@ const CurrencieScreenPresenter: React.FC = () => {
       :<><ChartHeader
         labels={stocksName.map((item: any) => item)}
         datasets={[{ data: stocks}]}
-        legend={["Pontos na bolsa"]}
       />
 
-      <Card
-        background="#FFF"
-        height={150}
-        width={150}
+      <ScrollView
+        style={{marginTop: 10}}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
       >
-        <></>
-      </Card></>}
+        {taxes.map((item: any) => (
+          <Card
+          background="#F5F5F5"
+          height={150}
+          width={150}
+        >
+          <>
+          <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
+          <CenterViewCard>
+            <Icon name="dollar" color="#799" size={50} />
+            <TextTaxes>R$ = {item.value}</TextTaxes>
+          </CenterViewCard>
+          </>
+        </Card>
+        ))}
+      </ScrollView></>}
     </Container>
   )
 }

@@ -9,24 +9,22 @@ import {
 interface ChartHeaderProps {
   labels: string[]
   datasets: any[]
-  legend?: string[]
 }
 
 const ChartHeader: React.FC<ChartHeaderProps> = (
   props: ChartHeaderProps
 ) => {
-  const { labels, datasets, legend } = props;
+  const { labels, datasets } = props;
   const data = {
     labels: labels,
-    datasets: datasets,
-    legend: legend
+    datasets: datasets
   };
 
   const chartConfig = {
     backgroundGradientFrom: "#37E39F",
     backgroundGradientFromOpacity: 0,
     backgroundGradientTo: "#5D2DFD",
-    backgroundGradientToOpacity: 0.5,
+    backgroundGradientToOpacity: 0.1,
     color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
     strokeWidth: 2, // optional, default 3
     barPercentage: 0.5,
@@ -37,7 +35,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
   return (
     <Container>
       <View>
-        {/* <BarChart
+        <BarChart
           style={{ width:'100%' }}
           data={data}
           width={screenWidth}
@@ -45,15 +43,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
           yAxisLabel=""
           chartConfig={chartConfig}
           verticalLabelRotation={55}
-        /> */}
-        <LineChart
-          style={{paddingBottom:35}}
-          data={data}
-          width={screenWidth}
-          height={220}
-          chartConfig={chartConfig}
           horizontalLabelRotation={-55}
-          verticalLabelRotation={55}
         />
       </View>
     </Container>
