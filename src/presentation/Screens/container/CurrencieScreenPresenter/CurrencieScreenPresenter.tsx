@@ -39,11 +39,11 @@ const CurrencieScreenPresenter: React.FC = () => {
         
         // Datas Taxes
         const adapterTaxes: any = [
-          {name:'cdi', value: response.taxes[0].cdi},
-          {name:'cdi dia', value: response.taxes[0].cdi_daily},
-          {name:'fator dia', value: response.taxes[0].daily_factor},
-          {name:'selic', value: response.taxes[0].selic},
-          {name:'selic dia', value: response.taxes[0].selic_daily},
+          {id:'1', name:'cdi', value: response.taxes[0].cdi},
+          {id:'2', name:'cdi dia', value: response.taxes[0].cdi_daily},
+          {id:'3', name:'fator dia', value: response.taxes[0].daily_factor},
+          {id:'4', name:'selic', value: response.taxes[0].selic},
+          {id:'5', name:'selic dia', value: response.taxes[0].selic_daily},
         ]
 
         
@@ -77,10 +77,11 @@ const CurrencieScreenPresenter: React.FC = () => {
       >
         {taxes.map((item: any) => (
           <Card
-          background="#000"
-          height={150}
-          width={150}
-        >
+            key={item.id}
+            background="#000"
+            height={150}
+            width={150}
+          >
           <>
           <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
           <CenterViewCard>
