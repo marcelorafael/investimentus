@@ -3,20 +3,23 @@ import { Container } from './ChartHeader.styles';
 import { Dimensions, View } from 'react-native';
 import {
   BarChart,
+  LineChart,
 } from "react-native-chart-kit";
 
 interface ChartHeaderProps {
   labels: string[]
   datasets: any[]
+  legend?: string[]
 }
 
 const ChartHeader: React.FC<ChartHeaderProps> = (
   props: ChartHeaderProps
 ) => {
-  const { labels, datasets } = props;
+  const { labels, datasets, legend } = props;
   const data = {
     labels: labels,
-    datasets: datasets
+    datasets: datasets,
+    legend: legend
   };
 
   const chartConfig = {
@@ -34,7 +37,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
   return (
     <Container>
       <View>
-        <BarChart
+        {/* <BarChart
           style={{ width:'100%' }}
           data={data}
           width={screenWidth}
@@ -42,6 +45,12 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
           yAxisLabel=""
           chartConfig={chartConfig}
           verticalLabelRotation={55}
+        /> */}
+        <LineChart
+          data={data}
+          width={screenWidth}
+          height={220}
+          chartConfig={chartConfig}
         />
       </View>
     </Container>

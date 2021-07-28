@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 
-import { StockScreenPresenter } from '../src/presentation/Screens/components/StockScreen/container/StockScreenPresenter';
+import { StockScreenPresenter } from '../src/presentation/Screens/container/StockScreenPresenter';
 import { CurrencieScreenPresenter } from '../src/presentation/Screens/container/CurrencieScreenPresenter';
 // import { COLORS, FONTS, icons } from "../constants"
 
