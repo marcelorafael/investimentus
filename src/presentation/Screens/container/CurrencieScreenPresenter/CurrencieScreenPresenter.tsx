@@ -77,7 +77,7 @@ const CurrencieScreenPresenter: React.FC = () => {
       >
         {taxes.map((item: any) => (
           <Card
-          background="#F5F5F5"
+          background="#000"
           height={150}
           width={150}
         >
