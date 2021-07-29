@@ -1,0 +1,1 @@
+export * from './InfoCurrencyPresenter.styles';

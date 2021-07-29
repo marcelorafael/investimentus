@@ -60,8 +60,8 @@ export const FooterCard = styled(LinearGradient).attrs({
   colors:['#000','#7F5DF0']
 })`
 width: 90%;
-border-radius: 5px;
-
 padding: 10px;
 margin: 10px;
+
+border-radius: 5px;
 `;

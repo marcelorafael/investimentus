@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 
 import Tabs from "../navigation/tabs";
-
+import { InfoCurrencyPresenter } from '../src/presentation/Screens/container/InfoCurrencyPresenter/InfoCurrencyPresenter';
 const Stack = createStackNavigator();
 
 const Routes = () => {
@@ -11,13 +11,21 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: false,
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: '#218c74' },
         }}
-        initialRouteName={'Home'}
+        initialRouteName={'Tabs'}
+        headerMode="screen"
       >
         <Stack.Screen
-          name="Home"
+          name="Tabs"
           component={Tabs}
+        />
+
+        <Stack.Screen
+          name="InfoCurrencyPresenter"
+          component={InfoCurrencyPresenter}
         />
       </Stack.Navigator>
     </NavigationContainer>
