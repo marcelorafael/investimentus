@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Keyboard, ActivityIndicator, ScrollView } from 'react-native';
+import { Keyboard, ActivityIndicator, ScrollView, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../../../Base/components/Card';
 import { ChartHeader } from '../../../Base/components/ChartHeader';
 import { 
   Container,
-  CenterViewCard, 
-  TextTaxes 
+  CenterViewCard,
+  CenterView,
+  TextTaxes,
+  TextUSD,
+  TitleUSD,
+  CenterViewUSD,
+  ContainerTextUSD
 } from './CurrencieScreenPresenter.styles';
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
 
@@ -15,7 +20,9 @@ const CurrencieScreenPresenter: React.FC = () => {
   const [stocks, setStocks] = useState([]);
   const [stocksName, setStocksName] = useState([]);
   const [taxes, setTaxes] = useState([]);
-  const [taxesName, setTaxesName] = useState([]);
+  const [currencie, setCurrencie] = useState([]);
+  const [USD, setUSD] = useState([]);
+
   let entriesStocks = []
 
   useEffect(() => {
@@ -46,12 +53,25 @@ const CurrencieScreenPresenter: React.FC = () => {
           {id:'5', name:'selic dia', value: response.taxes[0].selic_daily},
         ]
 
-        
-
         setTaxes(adapterTaxes)
 
-        // setTaxesName()
-        console.log(adapterTaxes)
+        // Datas Currencies
+        const keysCurrencies = Object.keys(response.currencies);
+        const entrieCurrencies = Object.entries(response.currencies);
+        let adapterCurrencies: any = entrieCurrencies.map(item => item[1]);
+        let teste = entrieCurrencies.map(item => item[1])
+        setCurrencie(adapterCurrencies);
+
+        // Data USD
+        let adapterUSD: any = [
+          {
+            name: response.currencies.USD.name,
+            buy: response.currencies.USD.buy
+          }
+        ]
+        setUSD(adapterUSD)
+
+        console.log(adapterUSD);
       } catch (error) {
         console.log(error);
       }
@@ -64,10 +84,11 @@ const CurrencieScreenPresenter: React.FC = () => {
   return (
     <Container>
       {activity === false
-      ?<><ActivityIndicator color="#37E39F" size={60} /></>
+      ?<View style={{flex: 1, alignItems:'center', justifyContent:'center'}}><ActivityIndicator color="#37E39F" size={60} /></View>
       :<><ChartHeader
         labels={stocksName.map((item: any) => item)}
         datasets={[{ data: stocks}]}
+        title="Pontuação na bolsa"
       />
 
       <ScrollView
@@ -91,7 +112,41 @@ const CurrencieScreenPresenter: React.FC = () => {
           </>
         </Card>
         ))}
-      </ScrollView></>}
+      </ScrollView>
+      <CenterView>
+      <Card
+        background="#000"
+        height={150}
+        width="95%"
+      >
+        <>
+          <TitleUSD>Valor de compra do dolar atualizado.</TitleUSD>
+          {USD.map((item: any) => (
+            <CenterViewUSD>
+              
+              <ContainerTextUSD>
+                <TextUSD>Real</TextUSD>
+                <TextUSD>R$ = {item.buy}</TextUSD>
+              </ContainerTextUSD>
+              <ContainerTextUSD style={{alignItems:'center', justifyContent:'center'}}>
+               {/* <Icon name="dollar" color="#37E39F" size={100} /> */}
+              </ContainerTextUSD>
+              <ContainerTextUSD>
+                <TextUSD>{item.name}</TextUSD>
+                <TextUSD>U$$ = 1,00</TextUSD>
+              </ContainerTextUSD>
+            </CenterViewUSD>
+          ))}
+        </>
+      </Card>
+      <Card
+        background="#FFF"
+        height={150}
+        width="95%"
+      >
+        <></>
+      </Card>
+      </CenterView></>}
     </Container>
   )
 }

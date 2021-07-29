@@ -1,20 +1,20 @@
 import React from 'react'
-import { Container } from './ChartHeader.styles';
-import { Dimensions, View } from 'react-native';
+import { Container, Title } from './ChartHeader.styles';
+import { Dimensions, Text } from 'react-native';
 import {
   BarChart,
-  LineChart,
 } from "react-native-chart-kit";
 
 interface ChartHeaderProps {
   labels: string[]
   datasets: any[]
+  title: string
 }
 
 const ChartHeader: React.FC<ChartHeaderProps> = (
   props: ChartHeaderProps
 ) => {
-  const { labels, datasets } = props;
+  const { labels, datasets, title } = props;
   const data = {
     labels: labels,
     datasets: datasets
@@ -23,7 +23,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
   const chartConfig = {
     backgroundGradientFrom: "#37E39F",
     backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#5D2DFD",
+    backgroundGradientTo: "#000",
     backgroundGradientToOpacity: 0.1,
     color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
     strokeWidth: 2, // optional, default 3
@@ -34,7 +34,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
 
   return (
     <Container>
-      <View>
+        <Title>{title}</Title>
         <BarChart
           style={{ width:'100%' }}
           data={data}
@@ -45,7 +45,6 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
           verticalLabelRotation={55}
           horizontalLabelRotation={-55}
         />
-      </View>
     </Container>
   )
 }

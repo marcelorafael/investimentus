@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 interface WrapperProps {
-  width: number
+  width: number | string
   height: number
   background: string
 }
@@ -13,5 +13,5 @@ padding: 20px;
 margin: 5px;
 
 height: ${props => props.height }px;
-width: ${props => props.width}px;
+width: ${props => props.width};
 `;

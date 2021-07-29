@@ -4,7 +4,7 @@ import { Wrapper } from './Card.styles'
 export type TypeDimensions = number | string
 
 interface CardProps {
-  width: number
+  width: number | string
   height: number
   background: string
   children: React.ReactElement

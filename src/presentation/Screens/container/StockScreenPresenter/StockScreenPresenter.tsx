@@ -33,12 +33,26 @@ const StockScreenPresenter: React.FC = () => {
       const keys: any = Object.entries(stock)
 
        let adapter: any = [];
-       adapter = [keys[0][1]]
+      //  adapter = [keys[0][1]]
+
+        adapter = [
+          {
+            name: keys[0][1].name,
+            companyName: keys[0][1].company_name,
+            percent: keys[0][1].change_percert,
+            close: keys[0][1].market_time.close,
+            open: keys[0][1].market_time.open,
+            currency: keys[0][1].currency,
+            description: keys[0][1].description,
+            market_cap: keys[0][1].market_cap,
+            price: keys[0][1].price,
+            region: keys[0][1].region,
+            symbol: keys[0][1].symbol,
+          }
+         ]
        setResult(adapter)
 
        setCenterView(true)
-
-       
        
       console.log(result)
     } catch (error) {
@@ -72,8 +86,8 @@ const StockScreenPresenter: React.FC = () => {
                 <DetailsCurrencie
                   key={item.name}
                   change_percert={item.change_percent}
-                  close={item.market_time.close}
-                  open={item.market_time.open}
+                  close={item.close}
+                  open={item.open}
                   company_name={item.companyName}
                   currency={item.currency}
                   description={item.description}
