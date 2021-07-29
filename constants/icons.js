@@ -8,6 +8,7 @@ const right_arrow = require("../assets/icons/right_arrow.png");
 const settings = require("../assets/icons/settings.png");
 const star = require("../assets/icons/star.png");
 const transaction = require("../assets/icons/transaction.png");
+const money = require("../assets/icons/money.png");
 
 export default {
     back_arrow,
@@ -19,5 +20,5 @@ export default {
     right_arrow,
     settings,
     star,
-    transaction
+    money
 }

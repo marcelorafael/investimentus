@@ -151,7 +151,7 @@ const CurrencieScreenPresenter: React.FC = () => {
         <>{currencie.map((item: any) => (
             <CenterViewCurrencie key={item.name}>
               {typeof item.name !== 'undefined' && 
-                <ContainerTextCurrencie onPress={() => alert(item.name)}>
+                <ContainerTextCurrencie onPress={() => setModalVisible(true)}>
                   <TextCurrencie>{item.name}</TextCurrencie>
                   <Icon name="chevron-right" color="#37E39F" size={20} />
                 </ContainerTextCurrencie>
