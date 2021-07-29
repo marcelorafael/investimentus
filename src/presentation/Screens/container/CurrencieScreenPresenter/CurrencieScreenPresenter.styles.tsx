@@ -49,3 +49,26 @@ height: 100%;
 align-items: center;
 justify-content: flex-end;
 `;
+
+export const CenterViewCurrencie = styled.View`
+margin-bottom: 5px;
+`;
+
+export const ContainerTextCurrencie = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.5
+})`
+width: 100%;
+height: 60px;
+border-bottom-width: 1px;
+border-bottom-color: #eed9d9;
+
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding: 5px;
+`;
+
+export const TextCurrencie = styled.Text`
+${({theme}) => theme?.FONTS?.oswald ?? {}};
+color: ${({theme}) => theme?.COLORS?.white ?? '#FFF'};
+`;

@@ -3,6 +3,7 @@ import { Keyboard, ActivityIndicator, ScrollView, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../../../Base/components/Card';
 import { ChartHeader } from '../../../Base/components/ChartHeader';
+
 import { 
   Container,
   CenterViewCard,
@@ -11,7 +12,10 @@ import {
   TextUSD,
   TitleUSD,
   CenterViewUSD,
-  ContainerTextUSD
+  ContainerTextUSD,
+  TextCurrencie,
+  CenterViewCurrencie,
+  ContainerTextCurrencie,
 } from './CurrencieScreenPresenter.styles';
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
 
@@ -71,7 +75,7 @@ const CurrencieScreenPresenter: React.FC = () => {
         ]
         setUSD(adapterUSD)
 
-        console.log(adapterUSD);
+        console.log(currencie);
       } catch (error) {
         console.log(error);
       }
@@ -140,11 +144,21 @@ const CurrencieScreenPresenter: React.FC = () => {
         </>
       </Card>
       <Card
-        background="#FFF"
-        height={150}
+        background="#000"
+        height={555}
         width="95%"
       >
-        <></>
+        <>{currencie.map((item: any) => (
+            <CenterViewCurrencie key={item.name}>
+              {typeof item.name !== 'undefined' && 
+                <ContainerTextCurrencie onPress={() => alert(item.name)}>
+                  <TextCurrencie>{item.name}</TextCurrencie>
+                  <Icon name="chevron-right" color="#37E39F" size={20} />
+                </ContainerTextCurrencie>
+              }
+            </CenterViewCurrencie>
+          ))}
+        </>
       </Card>
       </CenterView></>}
     </Container>

@@ -33,7 +33,6 @@ const StockScreenPresenter: React.FC = () => {
       const keys: any = Object.entries(stock)
 
        let adapter: any = [];
-      //  adapter = [keys[0][1]]
 
         adapter = [
           {
