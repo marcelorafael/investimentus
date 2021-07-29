@@ -76,11 +76,6 @@ const Tabs = () => {
                 component={CurrencieScreenPresenter}
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        // <Image
-                        //     source={icons.transaction}
-                        //     resizeMode='contain'
-                        //     style={{ width: 30, height: 30, tintColor: COLORS.white }}
-                        // />
                         <Icon name="bitcoin" color={focused ? COLORS.white : COLORS.black} size={20} />
                     ),
                     tabBarButton: (props) => (
