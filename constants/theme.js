@@ -48,7 +48,7 @@ export const FONTS = {
     body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: '30px' },
     body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: '22px' },
     body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: '22px' },
-    body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: '22px' },
+    body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
     bullpen: { fontFamily: "Bullpen3D", fontSize: SIZES.h2, lineHeight: '30px' },
     chigoda: { fontFamily: "Chigoda", fontSize: SIZES.h2, lineHeight: '30px' },
     magnolia: { fontFamily: "Magnolia", fontSize: SIZES.h2, lineHeight: '30px' },

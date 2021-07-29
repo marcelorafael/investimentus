@@ -28,7 +28,6 @@ const StockScreen: React.FC<StockScreenProps> = (
 ) => {
   const { value, placeholder, children, onChangeText, onPress } = props;
 
-
   return (
     <Container>
       <Header>

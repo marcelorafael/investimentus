@@ -1,14 +1,22 @@
 import styled from 'styled-components/native';
-import { Animated } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-export const Container = styled.View`
+// background-color: ${props => props?.theme?.COLORS?.greenFocused ?? ''};
+
+export const Container = styled(LinearGradient).attrs({
+  colors:['#218c74','#000']
+})`
 flex: 1;
-background-color: ${props => props?.theme?.COLORS?.greenFocused ?? '#218c74'};
 justify-content: space-between;
 `;
 
-export const Footer = styled.View`
-background-color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
+
+// background-color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
+
+
+export const Footer = styled(LinearGradient).attrs({
+  colors:['#accec6','#1a3f1a']
+})`
 width: 100%;
 height: 15%;
 border-top-left-radius: 10px;

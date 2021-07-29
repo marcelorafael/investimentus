@@ -5,7 +5,7 @@ import Routes from './Routes/Routes';
 import theme from './constants/theme';
 
 const App = () => {
-  // LogBox.ignoreAllLogs()
+  LogBox.ignoreAllLogs()
   return (
     <ThemeProvider theme={theme}>
       <Routes />
