@@ -111,7 +111,7 @@ const CurrencieScreenPresenter: React.FC = () => {
           <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
           <CenterViewCard>
             <Icon name="dollar" color="#799" size={50} />
-            <TextTaxes>R$ = {item.value}</TextTaxes>
+            <TextTaxes>{item.value} %</TextTaxes>
           </CenterViewCard>
           </>
         </Card>
@@ -119,7 +119,7 @@ const CurrencieScreenPresenter: React.FC = () => {
       </ScrollView>
       <CenterView>
       <Card
-        background="#000"
+        background="#0e3516"
         height={150}
         width="95%"
       >

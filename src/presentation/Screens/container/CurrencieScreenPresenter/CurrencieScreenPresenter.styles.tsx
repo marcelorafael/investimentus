@@ -16,9 +16,9 @@ flex: 1;
 align-items: center;
 justify-content: center;
 `;
-
+// 218c74
 export const CenterViewCard = styled(LinearGradient).attrs({
-  colors:['#000','#218c74']
+  colors:['#000','#7F5DF0']
 })`
 flex: 1;
 align-items: center;
@@ -28,13 +28,13 @@ border-radius: 5px;
 export const TextUSD = styled.Text`
 ${({theme}) => theme?.FONTS?.oswald ?? {}}
 text-align: center;
-color: ${({theme}) => theme?.COLORS?.green ?? '#FFF'};
+color: ${({theme}) => theme?.COLORS?.white ?? '#FFF'};
 `;
 
 export const TitleUSD = styled.Text`
 ${({theme}) => theme?.FONTS?.oswaldBold ?? {}}
 text-align: center;
-color: ${({theme}) => theme?.COLORS?.green?? '#FFF'};
+color: ${({theme}) => theme?.COLORS?.white?? '#FFF'};
 font-size: 18px;
 `;
 

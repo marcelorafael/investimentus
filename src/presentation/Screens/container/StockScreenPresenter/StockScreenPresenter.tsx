@@ -64,7 +64,7 @@ const StockScreenPresenter: React.FC = () => {
 
   return (
     <Container>
-      <StatusBar barStyle="dark-content" backgroundColor="#218c74" />
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
       <StockScreen 
         onPress={() => handleStock(value)}
         placeholder="exemplo: bidi4..."

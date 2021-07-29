@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 // background-color: ${props => props?.theme?.COLORS?.greenFocused ?? ''};
 
 export const Container = styled(LinearGradient).attrs({
-  colors:['#218c74','#000']
+  colors:['#000','#7F5DF0']
 })`
 flex: 1;
 justify-content: space-between;
@@ -13,9 +13,9 @@ justify-content: space-between;
 
 // background-color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
 
-
+// colors:['#accec6','#1a3f1a']
 export const Footer = styled(LinearGradient).attrs({
-  colors:['#accec6','#1a3f1a']
+  colors:['#7F5DF0','#000']
 })`
 width: 100%;
 height: 15%;
@@ -28,6 +28,7 @@ justify-content: center;
 export const DateFormat = styled.Text`
 ${({theme}) => theme?.FONTS?.bullpen ?? {}}
 text-align: center;
+color: ${({theme}) => theme?.COLORS?.white ?? '#FFF'};
 `;
 
 export const TextFooter = styled.Text`
@@ -35,7 +36,7 @@ ${({theme}) => theme?.FONTS?.robotoThin ?? {}}
 text-align: center;
 font-size: 14px;
 font-weight: bold;
-color: ${({theme}) => theme?.COLORS?.asphalt ?? ''};
+color: ${({theme}) => theme?.COLORS?.white ?? '#FFF'};
 `;
 
 export const Header = styled.View`
@@ -59,7 +60,7 @@ background-color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
 export const BtnSearch = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7
 })`
-background-color: ${({theme}) => theme?.COLORS?.green ?? '#fff'};
+background-color: ${({theme}) => theme?.COLORS?.primary ?? '#fff'};
 width: 50px;
 height: 50px;
 

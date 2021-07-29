@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Title } from './ChartHeader.styles';
-import { Dimensions, Text } from 'react-native';
+import { Dimensions } from 'react-native';
 import {
   BarChart,
 } from "react-native-chart-kit";
@@ -19,13 +19,13 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
     labels: labels,
     datasets: datasets
   };
-
+  // 37E39F
   const chartConfig = {
-    backgroundGradientFrom: "#37E39F",
+    backgroundGradientFrom: "#7F5DF0",
     backgroundGradientFromOpacity: 0,
     backgroundGradientTo: "#000",
     backgroundGradientToOpacity: 0.1,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     strokeWidth: 2, // optional, default 3
     barPercentage: 0.5,
     useShadowColorFromDataset: false, // optional
