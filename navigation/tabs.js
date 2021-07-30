@@ -12,6 +12,8 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { StockScreenPresenter } from '../src/presentation/Screens/container/StockScreenPresenter';
 import { CurrencieScreenPresenter } from '../src/presentation/Screens/container/CurrencieScreenPresenter';
+import { BitcoinChartsPresenter } from '../src/presentation/Screens/container/BitcoinChartsPresenter';
+
 import { COLORS, FONTS, icons } from "../constants"
 
 const Tab = createBottomTabNavigator();
@@ -72,8 +74,8 @@ const Tabs = () => {
                 }}
             />
             <Tab.Screen
-                name="Settings"
-                component={CurrencieScreenPresenter}
+                name="BitcoinChartsPresenter"
+                component={BitcoinChartsPresenter}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Icon name="bitcoin" color={focused ? COLORS.white : COLORS.black} size={20} />
