@@ -17,7 +17,7 @@ const ChartHeader: React.FC<ChartHeaderProps> = (
   const { labels, datasets, title } = props;
   const data = {
     labels: labels,
-    datasets: datasets
+    datasets: datasets,
   };
   // 37E39F
   const chartConfig = {
