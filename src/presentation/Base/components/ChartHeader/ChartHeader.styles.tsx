@@ -12,7 +12,7 @@ export const Title = styled.Text`
 ${({theme}) => theme?.FONTS?.robotoThin ?? {}}
 text-align: center;
 color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
-background-color: #24125e;
+background-color: #000;
 padding-bottom: 3px;
 font-size: 15px;
 `;
