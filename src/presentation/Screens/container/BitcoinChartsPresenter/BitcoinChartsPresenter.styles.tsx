@@ -41,3 +41,8 @@ justify-content: space-between;
 border-top-width: 1px;
 border-top-color: #FFF;
 `;
+
+export const ContainerChart = styled.View`
+width: 100%;
+align-items: center;
+`;
