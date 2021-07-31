@@ -51,7 +51,7 @@ const BitcoinChartsPresenter: React.FC = () => {
     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     style: {
-      borderRadius: 16
+      borderRadius: 16,
     },
     propsForDots: {
       r: "6",
@@ -73,21 +73,21 @@ const BitcoinChartsPresenter: React.FC = () => {
     <Container style={{flex: 1}}>
       <BitcoinCharts title="Crypto Moedas">
         {activity !== true 
-          ? <ActivityScreen />
+          ? <ActivityScreen name="bitcoin" size={100} />
           : <CenterView>
               <ContainerChart>
-                <Title>Gráfico de Valores</Title>
+                <Title>Gráfico de Valores - R$</Title>
                 <LineChart
                     data={data}
                     width={320} // from react-native
                     height={400}
+                    yAxisLabel="R$="
                     yAxisInterval={1} // optional, defaults to 1
                     chartConfig={chartConfig}
                     bezier
                     style={{
                       marginVertical: 8,
                       borderRadius: 16,
-                      // paddingBottom: 50
                     }}
                     verticalLabelRotation={55}
                     horizontalLabelRotation={-55}

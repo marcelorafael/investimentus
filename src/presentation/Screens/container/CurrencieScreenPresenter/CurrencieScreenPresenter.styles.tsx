@@ -1,7 +1,19 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
+flex: 1;
+`;
+
+export const ContainerActivity = styled(LinearGradient).attrs({
+  colors:['#000','#7F5DF0']
+})`
+flex: 1;
+`;
+
+
+
+export const CenterScroll = styled.ScrollView`
 flex: 1;
 `;
 

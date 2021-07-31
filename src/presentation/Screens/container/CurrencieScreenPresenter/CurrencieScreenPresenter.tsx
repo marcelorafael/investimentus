@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Keyboard, ActivityIndicator, ScrollView, View } from 'react-native';
+import { Keyboard, ScrollView, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../../../Base/components/Card';
 import { ChartHeader } from '../../../Base/components/ChartHeader';
-import { useNavigation } from '@react-navigation/native';
 
 import {
   Container,
+  CenterScroll,
+  ContainerActivity,
   CenterViewCard,
   CenterView,
   TextTaxes,
@@ -19,9 +20,10 @@ import {
   ContainerTextCurrencie,
 } from './CurrencieScreenPresenter.styles';
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
+import { ActivityScreen } from '../../../Base/components/ActivityScreen';
 
 const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
-  // const navigation = useNavigation();
+  
   const [activity, setActivity] = useState(false);
   const [stocks, setStocks] = useState([]);
   const [stocksName, setStocksName] = useState([]);
@@ -89,79 +91,83 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
 
   return (
     <Container>
-      {activity === false
-        ? <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}><ActivityIndicator color="#37E39F" size={60} /></View>
-        : <><ChartHeader
-          labels={stocksName.map((item: any) => item)}
-          datasets={[{ data: stocks }]}
-          title="Pontuação na bolsa"
-        />
+      {activity === false &&( <ContainerActivity><ActivityScreen size={100} name="euro" /></ContainerActivity>)}
+      {activity &&
+      (<CenterScroll>
+      
+        <ChartHeader
+            labels={stocksName.map((item: any) => item)}
+            datasets={[{ data: stocks }]}
+            title="Pontuação na bolsa"
+          />
 
-          <ScrollView
-            style={{ marginTop: 10 }}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          >
-            {taxes.map((item: any) => (
+            <ScrollView
+              style={{ marginTop: 10 }}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              {taxes.map((item: any) => (
+                <Card
+                  key={item.id}
+                  background="#000"
+                  height={150}
+                  width={150}
+                >
+                  <>
+                    <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
+                    <CenterViewCard>
+                      <Icon name="dollar" color="#799" size={50} />
+                      <TextTaxes>{item.value} %</TextTaxes>
+                    </CenterViewCard>
+                  </>
+                </Card>
+              ))}
+            </ScrollView>
+            <CenterView>
               <Card
-                key={item.id}
-                background="#000"
+                background="#0e3516"
                 height={150}
-                width={150}
+                width="95%"
               >
                 <>
-                  <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
-                  <CenterViewCard>
-                    <Icon name="dollar" color="#799" size={50} />
-                    <TextTaxes>{item.value} %</TextTaxes>
-                  </CenterViewCard>
+                  <TitleUSD>Valor de compra do dolar atualizado.</TitleUSD>
+                  {USD.map((item: any) => (
+                    <CenterViewUSD>
+
+                      <ContainerTextUSD>
+                        <TextUSD>Real</TextUSD>
+                        <TextUSD>R$ = {item.buy}</TextUSD>
+                      </ContainerTextUSD>
+                      <ContainerTextUSD style={{ alignItems: 'center', justifyContent: 'center' }}>
+                      </ContainerTextUSD>
+                      <ContainerTextUSD>
+                        <TextUSD>{item.name}</TextUSD>
+                        <TextUSD>U$$ = 1,00</TextUSD>
+                      </ContainerTextUSD>
+                    </CenterViewUSD>
+                  ))}
                 </>
               </Card>
-            ))}
-          </ScrollView>
-          <CenterView>
-            <Card
-              background="#0e3516"
-              height={150}
-              width="95%"
-            >
-              <>
-                <TitleUSD>Valor de compra do dolar atualizado.</TitleUSD>
-                {USD.map((item: any) => (
-                  <CenterViewUSD>
-
-                    <ContainerTextUSD>
-                      <TextUSD>Real</TextUSD>
-                      <TextUSD>R$ = {item.buy}</TextUSD>
-                    </ContainerTextUSD>
-                    <ContainerTextUSD style={{ alignItems: 'center', justifyContent: 'center' }}>
-                    </ContainerTextUSD>
-                    <ContainerTextUSD>
-                      <TextUSD>{item.name}</TextUSD>
-                      <TextUSD>U$$ = 1,00</TextUSD>
-                    </ContainerTextUSD>
-                  </CenterViewUSD>
+              <Card
+                background="#000"
+                height={555}
+                width="95%"
+              >
+                <>{currencie.map((item: any) => (
+                  <CenterViewCurrencie key={item.name}>
+                    {typeof item.name !== 'undefined' &&
+                      <ContainerTextCurrencie onPress={() => navigation.navigate('InfoCurrencyPresenter', { item: item })}>
+                        <TextCurrencie>{item.name}</TextCurrencie>
+                        <Icon name="chevron-right" color="#FFF" size={20} />
+                      </ContainerTextCurrencie>
+                    }
+                  </CenterViewCurrencie>
                 ))}
-              </>
-            </Card>
-            <Card
-              background="#000"
-              height={555}
-              width="95%"
-            >
-              <>{currencie.map((item: any) => (
-                <CenterViewCurrencie key={item.name}>
-                  {typeof item.name !== 'undefined' &&
-                    <ContainerTextCurrencie onPress={() => navigation.navigate('InfoCurrencyPresenter', { item: item })}>
-                      <TextCurrencie>{item.name}</TextCurrencie>
-                      <Icon name="chevron-right" color="#FFF" size={20} />
-                    </ContainerTextCurrencie>
-                  }
-                </CenterViewCurrencie>
-              ))}
-              </>
-            </Card>
-          </CenterView></>}
+                </>
+              </Card>
+            </CenterView>
+        </CenterScroll>)
+        }
     </Container>
   )
 }

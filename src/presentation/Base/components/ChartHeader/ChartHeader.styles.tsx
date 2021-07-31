@@ -9,11 +9,12 @@ width: 100%;
 `;
 
 export const Title = styled.Text`
-${({theme}) => theme?.FONTS?.oswaldBold ?? {}}
+${({theme}) => theme?.FONTS?.robotoThin ?? {}}
 text-align: center;
 color: ${({theme}) => theme?.COLORS?.white ?? '#fff'};
-background-color: #000;
+background-color: #24125e;
 padding-bottom: 3px;
+font-size: 15px;
 `;
 
 // background-color: ${props => props?.theme?.COLORS?.greenFocused ?? ''};
