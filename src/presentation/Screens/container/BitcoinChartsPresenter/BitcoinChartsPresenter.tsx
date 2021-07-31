@@ -16,16 +16,7 @@ import {
   LineChart
 } from "react-native-chart-kit";
 
-export function Teste() {
-  return(
-    <Container>
-      <View style={{flex: 1, alignItems:'center', justifyContent:'center'}}>
-        <Title> Teste </Title>
-        <ActivityIndicator size={50} color="#5D2DFD" />
-      </View>
-    </Container>
-  );
-}
+// import { ActivityScreen } from '../../../Base/components/ActivityScreen';
 
 const BitcoinChartsPresenter: React.FC = () => {
   const[cyrptos, useCyrptos] = useState([]);
@@ -82,7 +73,7 @@ const BitcoinChartsPresenter: React.FC = () => {
     <Container style={{flex: 1}}>
       <BitcoinCharts title="Crypto Moedas">
         {activity !== true 
-          ? <Teste />
+          ? <></>
           : <CenterView>
               <ContainerChart>
                 <Title>Gráfico de Valores</Title>

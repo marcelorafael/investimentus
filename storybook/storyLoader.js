@@ -4,6 +4,7 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
+  require("../src/presentation/Base/components/ActivityScreen/ActivityScreen.stories");
   require("../src/presentation/Base/components/Card/Card.stories");
   require("../src/presentation/Base/components/ChartHeader/ChartHeader.stories");
   require("../src/presentation/Base/components/DetailsCurrencie/DetailsCurrencie.stories");
@@ -13,6 +14,7 @@ function loadStories() {
 }
 
 const stories = [
+  "../src/presentation/Base/components/ActivityScreen/ActivityScreen.stories",
   "../src/presentation/Base/components/Card/Card.stories",
   "../src/presentation/Base/components/ChartHeader/ChartHeader.stories",
   "../src/presentation/Base/components/DetailsCurrencie/DetailsCurrencie.stories",
