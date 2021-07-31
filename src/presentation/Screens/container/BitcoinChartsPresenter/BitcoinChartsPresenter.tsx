@@ -43,6 +43,7 @@ const BitcoinChartsPresenter: React.FC = () => {
 
         setActivity(true);
 
+        console.log(cyrptos.map(item => item.last))
       } catch (error) {
         console.log(error)
         setActivity(false);
@@ -72,7 +73,7 @@ const BitcoinChartsPresenter: React.FC = () => {
     labels: cyrptos.map((item: any) => item.name),
     datasets: [
       {
-        data: cyrptos.map((item: any) => item.variation)
+        data: cyrptos.map((item: any) => item.last)
       }
     ]
   };
@@ -83,45 +84,48 @@ const BitcoinChartsPresenter: React.FC = () => {
         {activity !== true 
           ? <Teste />
           : <CenterView>
-          <ContainerChart>
-            <LineChart
-                data={data}
-                width={320} // from react-native
-                height={420}
-                yAxisLabel="$"
-                yAxisSuffix="k"
-                yAxisInterval={1} // optional, defaults to 1
-                chartConfig={chartConfig}
-                bezier
-                style={{
-                  marginVertical: 8,
-                  borderRadius: 16
-                }}
-                verticalLabelRotation={55}
-              />
-            </ContainerChart>
-            {cyrptos.map((item: any) => (
-              <ContainerValues>
-                <Title>{item.name === 'Blockchain.info' ? 'Bitcoin' : item.name}</Title>
-                <ContainerCrypto>
-                  <View>
-                    <TextValues>Compra</TextValues>
-                    <TextValues>{typeof item.buy === 'undefined' ? '-' : item.buy}</TextValues>
-                  </View>
+              <ContainerChart>
+                <Title>Gráfico de Valores</Title>
+                <LineChart
+                    data={data}
+                    width={320} // from react-native
+                    height={400}
+                    yAxisInterval={1} // optional, defaults to 1
+                    chartConfig={chartConfig}
+                    bezier
+                    style={{
+                      marginVertical: 8,
+                      borderRadius: 16,
+                      // paddingBottom: 50
+                    }}
+                    verticalLabelRotation={55}
+                    horizontalLabelRotation={-55}
+                    withVerticalLabels={true}
+                  />
+                </ContainerChart>
+                {cyrptos.map((item: any) => (
+                  <ContainerValues key={`b-${item.variation}`}>
+                    <Title>{item.name === 'Blockchain.info' ? 'Bitcoin' : item.name}</Title>
+                    <ContainerCrypto>
+                      <View>
+                        <TextValues>Compra</TextValues>
+                        <TextValues>{typeof item.last === 'undefined' ? '--' : item.last}</TextValues>
+                      </View>
 
-                  <View>
-                    <TextValues>venda</TextValues>
-                    <TextValues>{typeof item.sell === 'undefined' ? '--' : item.sell}</TextValues>
-                  </View>
+                      <View>
+                        <TextValues>venda</TextValues>
+                        <TextValues>{typeof item.sell === 'undefined' ? '--' : item.sell}</TextValues>
+                      </View>
 
-                  <View>
-                    <TextValues>Variação</TextValues>
-                    <TextValues>{item.variation}</TextValues>
-                  </View>
-                </ContainerCrypto>
-              </ContainerValues>
-            ))}
-        </CenterView>}
+                      <View>
+                        <TextValues>Variação</TextValues>
+                        <TextValues>{item.variation}</TextValues>
+                      </View>
+                    </ContainerCrypto>
+                  </ContainerValues>
+                ))}
+            </CenterView>
+        }
       </BitcoinCharts>
     </Container>
   )
