@@ -94,7 +94,7 @@ const Tabs = () => {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Icon name="usd" color={focused ? COLORS.greenFocused : COLORS.gray} size={20} />
+                            <Icon name="bar-chart" color={focused ? COLORS.greenFocused : COLORS.gray} size={20} />
                             <Text style={{ color: focused ? COLORS.greenFocused : COLORS.gray, ...FONTS.body5 }}>Cotações</Text>
                         </View>
                     )

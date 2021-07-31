@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Keyboard, ScrollView, StatusBar } from 'react-native';
+import { Keyboard, ScrollView, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../../../Base/components/Card';
 import { ChartHeader } from '../../../Base/components/ChartHeader';
@@ -94,7 +94,6 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
       {activity === false &&( <ContainerActivity><ActivityScreen size={100} name="euro" /></ContainerActivity>)}
       {activity &&
       (<CenterScroll>
-      
         <ChartHeader
             labels={stocksName.map((item: any) => item)}
             datasets={[{ data: stocks }]}
@@ -123,37 +122,14 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
                 </Card>
               ))}
             </ScrollView>
+            
             <CenterView>
               <Card
-                background="#0e3516"
-                height={150}
-                width="95%"
-              >
-                <>
-                  <TitleUSD>Valor de compra do dolar atualizado.</TitleUSD>
-                  {USD.map((item: any) => (
-                    <CenterViewUSD>
-
-                      <ContainerTextUSD>
-                        <TextUSD>Real</TextUSD>
-                        <TextUSD>R$ = {item.buy}</TextUSD>
-                      </ContainerTextUSD>
-                      <ContainerTextUSD style={{ alignItems: 'center', justifyContent: 'center' }}>
-                      </ContainerTextUSD>
-                      <ContainerTextUSD>
-                        <TextUSD>{item.name}</TextUSD>
-                        <TextUSD>U$$ = 1,00</TextUSD>
-                      </ContainerTextUSD>
-                    </CenterViewUSD>
-                  ))}
-                </>
-              </Card>
-              <Card
                 background="#000"
-                height={555}
+                height={635}
                 width="95%"
               >
-                <>{currencie.map((item: any) => (
+                <ContainerActivity>{currencie.map((item: any) => (
                   <CenterViewCurrencie key={item.name}>
                     {typeof item.name !== 'undefined' &&
                       <ContainerTextCurrencie onPress={() => navigation.navigate('InfoCurrencyPresenter', { item: item })}>
@@ -163,7 +139,7 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
                     }
                   </CenterViewCurrencie>
                 ))}
-                </>
+                </ContainerActivity>
               </Card>
             </CenterView>
         </CenterScroll>)

@@ -1,11 +1,12 @@
 import React from 'react'
-import { StatusBar } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { 
   Container, 
   CenterView, 
   Header,
   Touch,
   Title,
+  TitleName,
 } from './InfoCurrencyPresenter.styles'
 import { InfoCurrencie } from '../../components/InfoCurrencie/InfoCurrencie';
 import { useNavigation } from '@react-navigation/native';
@@ -18,12 +19,15 @@ const InfoCurrencyPresenter: React.FC = ({route}: any) => {
   console.log(item);
   return (
     <Container>
-      <StatusBar backgroundColor="#218c74" />
+      <StatusBar backgroundColor="#000" />
       <Header>
         <Touch onPress={() => navigation.goBack()}>
-          <Icon name="chevron-left" color="#FFF" size={25} />
+          <Icon name="chevron-left" color="#FFF" size={20} />
         </Touch>
-        <Title>Investimentus</Title>
+        <View style={{width:'100%', alignItems:'center'}}>
+          <Title>Investimentus</Title>
+          <TitleName>{item.name}</TitleName>
+        </View>
       </Header>
       
       <CenterView>

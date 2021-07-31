@@ -6,9 +6,11 @@ flex: 1;
 `;
 
 export const ContainerActivity = styled(LinearGradient).attrs({
-  colors:['#000','#7F5DF0']
+  colors:['#000', '#1f0968','#000']
 })`
 flex: 1;
+border-radius: 5px;
+padding: 3px;
 `;
 
 
@@ -50,10 +52,13 @@ color: ${({theme}) => theme?.COLORS?.white?? '#FFF'};
 font-size: 18px;
 `;
 
-export const CenterViewUSD = styled.View`
+export const CenterViewUSD = styled(LinearGradient).attrs({
+  colors:['#000','#7F5DF0']
+})`
 flex: 1;
 flex-direction: row;
 justify-content: space-between;
+border-radius: 5px;
 `;
 
 export const ContainerTextUSD = styled.View`
@@ -71,8 +76,10 @@ export const ContainerTextCurrencie = styled.TouchableOpacity.attrs({
 })`
 width: 100%;
 height: 60px;
-border-bottom-width: 1px;
-border-bottom-color: #eed9d9;
+border-width: 0.5px;
+border-color: rgba(255, 255, 255, 0.2);
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0.1);
 
 flex-direction: row;
 align-items: center;

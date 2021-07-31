@@ -10,6 +10,7 @@ import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie';
 
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
 import { Alert } from 'react-native';
+import { ActivityScreen } from '../../../Base/components/ActivityScreen';
 
 const StockScreenPresenter: React.FC = () => {
 

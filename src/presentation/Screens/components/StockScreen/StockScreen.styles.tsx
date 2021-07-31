@@ -15,7 +15,7 @@ justify-content: space-between;
 
 // colors:['#accec6','#1a3f1a']
 export const Footer = styled(LinearGradient).attrs({
-  colors:['#7F5DF0','#000']
+  colors:['#000','#7F5DF0']
 })`
 width: 100%;
 height: 15%;
