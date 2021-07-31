@@ -11,12 +11,12 @@ import {
 
 import { BitcoinCharts } from '../../components/BitcoinCharts';
 import Stocks from '../../../../services/axios/GetDatas/Stocks';
-import { View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 import {
   LineChart
 } from "react-native-chart-kit";
 
-// import { ActivityScreen } from '../../../Base/components/ActivityScreen';
+import { ActivityScreen } from '../../../Base/components/ActivityScreen';
 
 const BitcoinChartsPresenter: React.FC = () => {
   const[cyrptos, useCyrptos] = useState([]);
@@ -73,7 +73,7 @@ const BitcoinChartsPresenter: React.FC = () => {
     <Container style={{flex: 1}}>
       <BitcoinCharts title="Crypto Moedas">
         {activity !== true 
-          ? <></>
+          ? <ActivityScreen />
           : <CenterView>
               <ContainerChart>
                 <Title>Gráfico de Valores</Title>
