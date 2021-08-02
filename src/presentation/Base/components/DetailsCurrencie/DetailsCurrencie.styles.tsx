@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const Container = styled(LinearGradient).attrs({
-  colors:['#000','#7F5DF0','#000']
+  colors:['#7F5DF0','#1c0e58','#000']
 })`
 
 width: 300px;
