@@ -35,9 +35,7 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
 
   useEffect(() => {
     async function handleStock() {
-      Keyboard.dismiss()
-
-      setActivity(activity ? true : true)
+      Keyboard.dismiss();
 
       try {
         const response = await Stocks('/?key=34664f77');
@@ -77,7 +75,9 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
             buy: response.currencies.USD.buy
           }
         ]
-        setUSD(adapterUSD)
+        setUSD(adapterUSD);
+
+        setActivity(true);
 
         console.log(currencie);
       } catch (error) {
@@ -115,7 +115,7 @@ const CurrencieScreenPresenter: React.FC = ({navigation}: any) => {
                   <>
                     <TextTaxes>{item.name.toUpperCase()}</TextTaxes>
                     <CenterViewCard>
-                      <Icon name="dollar" color="#799" size={50} />
+                      <Icon name="dollar" color="#e3e6e6" size={50} />
                       <TextTaxes>{item.value} %</TextTaxes>
                     </CenterViewCard>
                   </>

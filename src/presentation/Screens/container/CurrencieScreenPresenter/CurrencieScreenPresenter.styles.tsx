@@ -6,14 +6,12 @@ flex: 1;
 `;
 
 export const ContainerActivity = styled(LinearGradient).attrs({
-  colors:['#000', '#1f0968','#000']
+  colors: ['#000','#7F5DF0']
 })`
 flex: 1;
 border-radius: 5px;
 padding: 3px;
 `;
-
-
 
 export const CenterScroll = styled.ScrollView`
 flex: 1;
