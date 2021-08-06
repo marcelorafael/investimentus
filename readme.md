@@ -11,7 +11,7 @@
 <h4> - API: HGBrasil finance </h4>
 <h4> - Jest </h4>
 
-<img src="https://github.com/marcelorafael/investimentus/blob/master/investimentus.gif" width="300" height="600" />
+<img src="https://github.com/marcelorafael/investimentus/blob/master/Investimentus.gif" width="300" height="600" />
 
 ### Features
 
