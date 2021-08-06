@@ -16,7 +16,8 @@
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",

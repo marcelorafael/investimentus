@@ -4,8 +4,6 @@ import { ThemeProvider } from 'styled-components'
 import Routes from './Routes/Routes'
 import theme from './constants/theme'
 
-let foo = 123
-
 const App = () => {
   LogBox.ignoreAllLogs()
   return (
