@@ -19,5 +19,5 @@
 - [x] Exibir informações sobre moedas(Euro, Dolar, Libra...)
 - [ ] Exibir informações sobre criptomoedas
 - [ ] Edição de dados
-- [x] Autenticação
+- [ ] Autenticação
 - [ ] Exclusão de dados
