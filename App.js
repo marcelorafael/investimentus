@@ -1,9 +1,8 @@
-import React from 'react';
-import { LogBox } from 'react-native';
+import React from 'react'
+import { LogBox } from 'react-native'
 import { ThemeProvider } from 'styled-components'
-import Routes from './Routes/Routes';
-import theme from './constants/theme';
-
+import Routes from './Routes/Routes'
+import theme from './constants/theme'
 
 const App = () => {
   LogBox.ignoreAllLogs()
@@ -15,4 +14,4 @@ const App = () => {
 }
 
 // export default require('./storybook').default;
-export default App;
+export default App
