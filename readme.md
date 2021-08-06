@@ -17,7 +17,8 @@
 
 - [x] Buscar informações sobre uma ação
 - [x] Exibir informações sobre moedas(Euro, Dolar, Libra...)
-- [ ] Exibir informações sobre criptomoedas
+- [x] Exibir informações sobre criptomoedas
 - [ ] Edição de dados
+- [x] Gráficos para avaliação de dados.
 - [ ] Autenticação
 - [ ] Exclusão de dados
