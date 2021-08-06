@@ -10,10 +10,11 @@
     "lint": "eslint src --max-warnings=0",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
-    "prestorybook": "rnstl"
+    "prestorybook": "rnstl",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "src/**/*":[
+    "src/**/*": [
       "yarn lint --fix"
     ]
   },
