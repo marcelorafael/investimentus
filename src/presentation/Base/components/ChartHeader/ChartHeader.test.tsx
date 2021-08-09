@@ -1,11 +1,13 @@
 import React from 'react'
 
 import renderer from 'react-test-renderer'
-import { ActivityScreen } from './ActivityScreen'
+import { ChartHeader } from './ChartHeader'
 
-describe('Base/ActivityScreen', () => {
+describe('Base/ChartHeader', () => {
   it('should match snapshot', () => {
-    const sut = <ActivityScreen name="bitcoin" size={50} title="" />
+    const sut = (
+      <ChartHeader datasets={[{ data: [12, 12, 12] }]} labels={[]} title="" />
+    )
 
     const render = renderer.create(sut)
 

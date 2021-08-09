@@ -1,11 +1,15 @@
 import React from 'react'
 
 import renderer from 'react-test-renderer'
-import { ActivityScreen } from './ActivityScreen'
+import { Card } from './Card'
 
-describe('Base/ActivityScreen', () => {
+describe('Base/Card', () => {
   it('should match snapshot', () => {
-    const sut = <ActivityScreen name="bitcoin" size={50} title="" />
+    const sut = (
+      <Card background="#000" height={50} width={50}>
+        <></>
+      </Card>
+    )
 
     const render = renderer.create(sut)
 
