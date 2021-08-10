@@ -1,87 +1,91 @@
 import React, { useState } from 'react'
 import { StatusBar, ActivityIndicator, Keyboard, View } from 'react-native'
-import { StockScreen } from '../../components/StockScreen'; 
-import { 
-  Container, 
-  TextBody,
-} from './StockScreenPresenter.styles';
+import { StockScreen } from '../../components/StockScreen'
+import { Container, TextBody } from './StockScreenPresenter.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie';
+import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie'
 
-import Stocks from '../../../../services/axios/GetDatas/Stocks';
-import { Alert } from 'react-native';
-import { ActivityScreen } from '../../../Base/components/ActivityScreen';
+import Stocks from '../../../../services/axios/GetDatas/Stocks'
+import { Alert } from 'react-native'
 
 const StockScreenPresenter: React.FC = () => {
-
-  const [centerView, setCenterView] = useState(false);
-  const [activity, setActivity] = useState(false);
-  const [value, setValue] = useState('');
-  const [result, setResult] = useState([]);
+  const [centerView, setCenterView] = useState(false)
+  const [activity, setActivity] = useState(false)
+  const [value, setValue] = useState('')
+  const [result, setResult] = useState([])
 
   async function handleStock(data: string) {
     Keyboard.dismiss()
-    if(value === '') { 
-      return Alert.alert('Investimentus Alerta!!!','Preencha o campo de busca.'); 
+    if (value === '') {
+      return Alert.alert(
+        'Investimentus Alerta!!!',
+        'Preencha o campo de busca.'
+      )
     }
     setActivity(activity ? true : true)
     setCenterView(false)
-    setValue('');1  
+    setValue('')
+    1
 
     try {
-      const stock = await Stocks(`/stock_price?key=34664f77&symbol=${data}`);
+      const stock = await Stocks(`/stock_price?key=34664f77&symbol=${data}`)
 
       const keys: any = Object.entries(stock)
 
-       let adapter: any = [];
+      let adapter: any = []
 
-        adapter = [
-          {
-            name: keys[0][1].name,
-            companyName: keys[0][1].company_name,
-            percent: keys[0][1].change_percert,
-            close: keys[0][1].market_time.close,
-            open: keys[0][1].market_time.open,
-            currency: keys[0][1].currency,
-            description: keys[0][1].description,
-            market_cap: keys[0][1].market_cap,
-            price: keys[0][1].price,
-            region: keys[0][1].region,
-            symbol: keys[0][1].symbol,
-          }
-         ]
-       setResult(adapter)
+      adapter = [
+        {
+          name: keys[0][1].name,
+          companyName: keys[0][1].company_name,
+          percent: keys[0][1].change_percert,
+          close: keys[0][1].market_time.close,
+          open: keys[0][1].market_time.open,
+          currency: keys[0][1].currency,
+          description: keys[0][1].description,
+          market_cap: keys[0][1].market_cap,
+          price: keys[0][1].price,
+          region: keys[0][1].region,
+          symbol: keys[0][1].symbol
+        }
+      ]
+      setResult(adapter)
 
-       setCenterView(true)
-       
+      setCenterView(true)
+
       console.log(result)
     } catch (error) {
       console.log(error)
       setCenterView(false)
       setActivity(false)
-      Alert.alert('Investimentus Alerta!!', 'não foi possível fazer a busca com os dados informados');
+      Alert.alert(
+        'Investimentus Alerta!!',
+        'não foi possível fazer a busca com os dados informados'
+      )
     }
   }
 
   return (
     <Container>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-      <StockScreen 
+      <StockScreen
         onPress={() => handleStock(value)}
         placeholder="exemplo: bidi4..."
         onChangeText={(text: string) => setValue(text)}
         value={value}
       >
-        <View style={{marginTop:10}}>
-        {
-          centerView === false
-            ? activity
-              ? <ActivityIndicator color="#37E39F" size={60} />
-              : <View style={{alignItems:'center'}}>
-                  <Icon name="usd" color="#FFF" size={100} />
-                  <TextBody>Investimentus</TextBody>
-                </View>
-            : <>
+        <View style={{ marginTop: 10 }}>
+          {centerView === false ? (
+            activity ? (
+              <ActivityIndicator color="#37E39F" size={60} />
+            ) : (
+              <View style={{ alignItems: 'center' }}>
+                <Icon name="usd" color="#FFF" size={100} />
+                <TextBody>Investimentus</TextBody>
+              </View>
+            )
+          ) : (
+            <>
               {result.map((item: any) => (
                 <DetailsCurrencie
                   key={item.name}
@@ -99,11 +103,11 @@ const StockScreenPresenter: React.FC = () => {
                 />
               ))}
             </>
-        }
+          )}
         </View>
       </StockScreen>
     </Container>
   )
 }
-const StockScreenPresenterMemo = React.memo(StockScreenPresenter);
+const StockScreenPresenterMemo = React.memo(StockScreenPresenter)
 export { StockScreenPresenterMemo as StockScreenPresenter }

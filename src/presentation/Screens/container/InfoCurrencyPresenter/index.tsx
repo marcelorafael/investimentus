@@ -1,1 +1,1 @@
-export * from './InfoCurrencyPresenter.styles';
+export * from './InfoCurrencyPresenter.styles'

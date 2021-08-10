@@ -1,1 +1,1 @@
-export * from './ActivityScreen';
+export * from './ActivityScreen'

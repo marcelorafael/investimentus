@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Screens/InfoCurrencie should match snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "flex-end",
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/icons/money.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 180,
+          "marginBottom": 50,
+          "width": 180,
+        },
+      ]
+    }
+  />
+  <BVLinearGradient
+    colors={
+      Array [
+        4278190080,
+        4286537200,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      Object {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+          "width": "90%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#FFF",
+            "marginTop": 10,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginTop": 10,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFF",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        R$ = 
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginTop": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+          },
+        ]
+      }
+    >
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFF",
+              },
+            ]
+          }
+        >
+          Venda
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFF",
+              },
+            ]
+          }
+        >
+          R$ = 
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFF",
+              },
+            ]
+          }
+        >
+          Variação
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFF",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </BVLinearGradient>
+</View>
+`

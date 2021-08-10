@@ -1,1 +1,1 @@
-export * from './BitcoinCharts';
+export * from './BitcoinCharts'

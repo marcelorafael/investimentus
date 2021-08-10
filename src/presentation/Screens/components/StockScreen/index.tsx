@@ -1,1 +1,1 @@
-export * from './StockScreen';
+export * from './StockScreen'

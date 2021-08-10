@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const api = axios.create({
-  baseURL:'https://api.hgbrasil.com/finance'
+  baseURL: 'https://api.hgbrasil.com/finance'
 })
 
-export default api;
+export default api

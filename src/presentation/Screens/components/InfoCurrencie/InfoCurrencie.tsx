@@ -1,10 +1,16 @@
 import React from 'react'
-import { View } from 'react-native';
-import { icons } from '../../../../../constants';
+import { View } from 'react-native'
+import { icons } from '../../../../../constants'
 import {
-  Container, Header, CenterView, TextCurrency,
-  Title, TextCenter, ImgMoney, FooterCard,
-} from './InfoCurrencie.styles';
+  Container,
+  Header,
+  CenterView,
+  TextCurrency,
+  Title,
+  TextCenter,
+  ImgMoney,
+  FooterCard
+} from './InfoCurrencie.styles'
 
 interface InfoCurrencieProps {
   title: string
@@ -16,7 +22,7 @@ interface InfoCurrencieProps {
 const InfoCurrencie: React.FC<InfoCurrencieProps> = (
   props: InfoCurrencieProps
 ) => {
-  const { buy, sell, variation, title } = props;
+  const { buy, sell, variation, title } = props
   return (
     <Container>
       <ImgMoney source={icons.money} />
@@ -40,5 +46,5 @@ const InfoCurrencie: React.FC<InfoCurrencieProps> = (
     </Container>
   )
 }
-const InfoCurrencieMemo = React.memo(InfoCurrencie);
-export { InfoCurrencieMemo as InfoCurrencie };
+const InfoCurrencieMemo = React.memo(InfoCurrencie)
+export { InfoCurrencieMemo as InfoCurrencie }

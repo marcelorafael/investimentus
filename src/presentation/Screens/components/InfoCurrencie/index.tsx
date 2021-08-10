@@ -1,1 +1,1 @@
-export * from './InfoCurrencie';
+export * from './InfoCurrencie'

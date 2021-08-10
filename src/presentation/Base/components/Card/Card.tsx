@@ -11,7 +11,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
-  const { width, height, background, children } = props;
+  const { width, height, background, children } = props
   return (
     <Wrapper
       width={width}
@@ -24,9 +24,9 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
   )
 }
 
-const CardMemo = React.memo(Card);
+const CardMemo = React.memo(Card)
 
-export { CardMemo as Card };
+export { CardMemo as Card }
 
 const styles = StyleSheet.create({
   container: {
@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
     shadowColor: '#222',
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 4
     },
-    shadowOpacity: 0.30,
+    shadowOpacity: 0.3,
     shadowRadius: 4.65,
 
     elevation: 8,
-    marginHorizontal: 5,
+    marginHorizontal: 5
   }
 })

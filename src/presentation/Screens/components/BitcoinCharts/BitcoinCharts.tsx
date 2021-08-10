@@ -1,7 +1,6 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Container, Header, Title } from './BitcoinCharts.styles'
-import LinearGradient from 'react-native-linear-gradient';
 
 interface BitcoinChartsProps {
   title: string
@@ -11,7 +10,7 @@ interface BitcoinChartsProps {
 const BitcoinCharts: React.FC<BitcoinChartsProps> = (
   props: BitcoinChartsProps
 ) => {
-  const { children, title} = props;
+  const { children, title } = props
   return (
     <Container>
       <Header>
@@ -22,5 +21,5 @@ const BitcoinCharts: React.FC<BitcoinChartsProps> = (
     </Container>
   )
 }
-const BitcoinChartsMemo = React.memo(BitcoinCharts);
-export { BitcoinChartsMemo as BitcoinCharts };
+const BitcoinChartsMemo = React.memo(BitcoinCharts)
+export { BitcoinChartsMemo as BitcoinCharts }

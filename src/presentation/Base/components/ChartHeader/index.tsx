@@ -1,1 +1,1 @@
-export * from './ChartHeader';
+export * from './ChartHeader'

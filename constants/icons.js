@@ -1,5 +1,5 @@
-const money = require("../assets/icons/money.png");
+const money = require('../assets/icons/money.png')
 
 export default {
-    money
+  money
 }

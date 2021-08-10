@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { format } from 'date-fns'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -10,23 +10,25 @@ import {
   Input,
   Header,
   BtnSearch,
-  CenterView,
-} from './StockScreen.styles';
+  CenterView
+} from './StockScreen.styles'
+import { Testable } from '../../../@types/components'
 
-const date = format(new Date(), 'dd/MM/yyyy');
+const date = format(new Date(), 'dd/MM/yyyy')
 
-interface StockScreenProps {
+interface StockScreenPropsBase {
   value: string
   children: React.ReactElement
   placeholder: string
+  // eslint-disable-next-line no-unused-vars
   onChangeText: (text: string) => void
   onPress: () => void
 }
 
-const StockScreen: React.FC<StockScreenProps> = (
-  props: StockScreenProps
-) => {
-  const { value, placeholder, children, onChangeText, onPress } = props;
+export type StockScreenProps = Testable<StockScreenPropsBase>
+
+const StockScreen: React.FC<StockScreenProps> = (props: StockScreenProps) => {
+  const { value, placeholder, children, onChangeText, onPress, testID } = props
 
   return (
     <Container>
@@ -36,14 +38,12 @@ const StockScreen: React.FC<StockScreenProps> = (
           onChangeText={onChangeText}
           placeholder={placeholder}
         />
-        <BtnSearch onPress={onPress}>
+        <BtnSearch onPress={onPress} testID={testID}>
           <Icon name="search" color="#FFF" size={20} />
         </BtnSearch>
       </Header>
 
-      <CenterView>
-        {children}
-      </CenterView>
+      <CenterView>{children}</CenterView>
 
       <Footer>
         <DateFormat>{date}</DateFormat>
@@ -52,5 +52,5 @@ const StockScreen: React.FC<StockScreenProps> = (
     </Container>
   )
 }
-const StockScreenMemo = React.memo(StockScreen);
+const StockScreenMemo = React.memo(StockScreen)
 export { StockScreenMemo as StockScreen }

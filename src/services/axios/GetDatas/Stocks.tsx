@@ -1,8 +1,8 @@
-import api from '../api';
+import api from '../api'
 
 const Stocks = async (data: string) => {
   try {
-    const response = await api.get(data, {validateStatus: () => true})
+    const response = await api.get(data, { validateStatus: () => true })
 
     return response.data.results
   } catch (error) {
@@ -10,4 +10,4 @@ const Stocks = async (data: string) => {
   }
 }
 
-export default Stocks;
+export default Stocks

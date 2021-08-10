@@ -1,1 +1,1 @@
-export * from './DetailsCurrencie';
+export * from './DetailsCurrencie'

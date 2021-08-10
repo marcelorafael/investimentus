@@ -1,1 +1,1 @@
-export * from './CurrencieScreenPresenter';
+export * from './CurrencieScreenPresenter'
