@@ -18,5 +18,6 @@ module.exports = {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
     '\\.svg': '<rootDir>/__mocks__/svgMock.js'
-  }
+  },
+  moduleDirectories: ['node_modules', 'utils', __dirname]
 }

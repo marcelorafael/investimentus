@@ -28,7 +28,7 @@ interface StockScreenPropsBase {
 export type StockScreenProps = Testable<StockScreenPropsBase>
 
 const StockScreen: React.FC<StockScreenProps> = (props: StockScreenProps) => {
-  const { value, placeholder, children, onChangeText, onPress, testID } = props
+  const { value, placeholder, children, onChangeText, onPress } = props
 
   return (
     <Container>
@@ -37,8 +37,9 @@ const StockScreen: React.FC<StockScreenProps> = (props: StockScreenProps) => {
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
+          testID="Screens/StockScreen/Input"
         />
-        <BtnSearch onPress={onPress} testID={testID}>
+        <BtnSearch onPress={onPress} testID="Screens/StockScreen/BtnSearch">
           <Icon name="search" color="#FFF" size={20} />
         </BtnSearch>
       </Header>
