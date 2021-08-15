@@ -1,7 +1,8 @@
 import React from 'react'
+import { renderWithProviders } from '../../../tests/utils'
 
-import renderer from 'react-test-renderer'
 import { Card } from './Card'
+import 'setimmediate'
 
 describe('Base/Card', () => {
   it('should match snapshot', () => {
@@ -11,7 +12,7 @@ describe('Base/Card', () => {
       </Card>
     )
 
-    const render = renderer.create(sut)
+    const render = renderWithProviders(sut)
 
     expect(render).toMatchSnapshot()
   })

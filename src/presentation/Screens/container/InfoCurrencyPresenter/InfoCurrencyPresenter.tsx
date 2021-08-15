@@ -9,12 +9,21 @@ import {
   TitleName
 } from './InfoCurrencyPresenter.styles'
 import { InfoCurrencie } from '../../components/InfoCurrencie/InfoCurrencie'
-import { useNavigation } from '@react-navigation/native'
+
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const InfoCurrencyPresenter: React.FC = ({ route }: any) => {
-  const navigation = useNavigation()
-  const { item } = route.params
+// import { RouteProp } from '@react-navigation/native';
+
+// type ParamList = {
+//   InfoCurrencyPresenter: {
+//     item: item
+//   }
+// }
+
+// const route = RouteProp<ParamList, 'Detail'>>
+
+const InfoCurrencyPresenter: React.FC = ({ route, navigation }: any) => {
+  const { item } = route?.params
   console.log(item)
   return (
     <Container>

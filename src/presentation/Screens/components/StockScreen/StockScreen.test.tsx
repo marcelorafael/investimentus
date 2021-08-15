@@ -1,9 +1,10 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+
 import * as Faker from 'faker'
 import { StockScreen } from './StockScreen'
 import 'setimmediate'
 import { fireEvent } from '@testing-library/react-native'
+import { renderWithProviders } from '@/presentation/tests/utils'
 
 describe('Screens/StockScreen', () => {
   it('should match snapshot', () => {
@@ -18,9 +19,9 @@ describe('Screens/StockScreen', () => {
       </StockScreen>
     )
 
-    const renderComponent = render(sut)
+    const render = renderWithProviders(sut)
 
-    expect(renderComponent).toMatchSnapshot()
+    expect(render).toMatchSnapshot()
   })
 
   it('should called when BtnSearch pressed', () => {
@@ -36,8 +37,8 @@ describe('Screens/StockScreen', () => {
       </StockScreen>
     )
 
-    const renderComponent = render(sut)
-    const button = renderComponent.getByTestId('Screens/StockScreen/BtnSearch')
+    const render = renderWithProviders(sut)
+    const button = render.getByTestId('Screens/StockScreen/BtnSearch')
 
     fireEvent.press(button)
     expect(onClickSpy).toBeCalledTimes(1)
@@ -58,8 +59,8 @@ describe('Screens/StockScreen', () => {
       </StockScreen>
     )
 
-    const renderComponent = render(sut)
-    const input = renderComponent.getByTestId('Screens/StockScreen/Input')
+    const render = renderWithProviders(sut)
+    const input = render.getByTestId('Screens/StockScreen/Input')
 
     fireEvent.changeText(input, testChangeText)
 

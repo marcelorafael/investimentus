@@ -1,7 +1,8 @@
 import React from 'react'
+import { renderWithProviders } from '../../../tests/utils'
 
-import renderer from 'react-test-renderer'
 import { ChartHeader } from './ChartHeader'
+import 'setimmediate'
 
 describe('Base/ChartHeader', () => {
   it('should match snapshot', () => {
@@ -9,7 +10,7 @@ describe('Base/ChartHeader', () => {
       <ChartHeader datasets={[{ data: [12, 12, 12] }]} labels={[]} title="" />
     )
 
-    const render = renderer.create(sut)
+    const render = renderWithProviders(sut)
 
     expect(render).toMatchSnapshot()
   })

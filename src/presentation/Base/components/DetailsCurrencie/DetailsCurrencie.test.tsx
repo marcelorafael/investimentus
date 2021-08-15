@@ -1,7 +1,8 @@
+import { renderWithProviders } from '@/presentation/tests/utils'
 import React from 'react'
 
-import renderer from 'react-test-renderer'
 import { DetailsCurrencie } from './DetailsCurrencie'
+import 'setimmediate'
 
 describe('Base/DetailsCurrencie', () => {
   it('should match snapshot', () => {
@@ -21,7 +22,7 @@ describe('Base/DetailsCurrencie', () => {
       />
     )
 
-    const render = renderer.create(sut)
+    const render = renderWithProviders(sut)
 
     expect(render).toMatchSnapshot()
   })

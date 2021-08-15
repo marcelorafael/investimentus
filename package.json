@@ -12,7 +12,8 @@
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
     "prestorybook": "rnstl",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts"
   },
   "jest": {
     "moduleDirectories": [
@@ -100,6 +101,7 @@
     "react-native-storybook-loader": "^2.0.4",
     "react-test-renderer": "16.13.1",
     "ts-jest": "^27.0.4",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
   },
   "config": {

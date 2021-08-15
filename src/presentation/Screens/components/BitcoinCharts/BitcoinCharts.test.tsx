@@ -1,6 +1,8 @@
+import { renderWithProviders } from '@/presentation/tests/utils'
 import React from 'react'
-import renderer from 'react-test-renderer'
+
 import { BitcoinCharts } from './BitcoinCharts'
+import 'setimmediate'
 
 describe('Screens/BitcoinCharts', () => {
   it('should match snapshot', () => {
@@ -10,7 +12,7 @@ describe('Screens/BitcoinCharts', () => {
       </BitcoinCharts>
     )
 
-    const renderComponent = renderer.create(sut)
+    const renderComponent = renderWithProviders(sut)
 
     expect(renderComponent).toMatchSnapshot()
   })

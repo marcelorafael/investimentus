@@ -1,12 +1,12 @@
 import React from 'react'
-
+// import { render } from '@testing-library/react-native'
+import { BitcoinChartsPresenter } from './BitcoinChartsPresenter'
 import { renderWithProviders } from '../../../tests/utils'
-import { ActivityScreen } from './ActivityScreen'
 import 'setimmediate'
 
-describe('Base/ActivityScreen', () => {
+describe('container/BitcoinChartsPresenter', () => {
   it('should match snapshot', () => {
-    const sut = <ActivityScreen name="bitcoin" size={50} title="" />
+    const sut = <BitcoinChartsPresenter />
 
     const render = renderWithProviders(sut)
 
