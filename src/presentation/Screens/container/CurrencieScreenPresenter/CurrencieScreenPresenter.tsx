@@ -62,7 +62,7 @@ const CurrencieScreenPresenter: React.FC = ({ navigation }: any) => {
 
         setActivity(true)
 
-        console.log(currencie)
+        console.log(response)
       } catch (error) {
         console.log(error)
       }

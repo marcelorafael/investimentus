@@ -25,7 +25,6 @@ const StockScreenPresenter: React.FC = () => {
     setActivity(activity ? true : true)
     setCenterView(false)
     setValue('')
-    1
 
     try {
       const stock = await Stocks(`/stock_price?key=34664f77&symbol=${data}`)
@@ -53,7 +52,7 @@ const StockScreenPresenter: React.FC = () => {
 
       setCenterView(true)
 
-      console.log(result)
+      console.log(stock)
     } catch (error) {
       console.log(error)
       setCenterView(false)

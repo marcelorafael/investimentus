@@ -31,6 +31,7 @@ const BitcoinChartsPresenter: React.FC = () => {
         setCyrptos(adapter)
 
         setActivity(true)
+        console.log(response)
       } catch (error) {
         console.log(error)
         setActivity(false)
