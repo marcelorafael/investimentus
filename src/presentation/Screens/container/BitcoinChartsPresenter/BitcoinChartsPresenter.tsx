@@ -9,6 +9,8 @@ import {
   ContainerChart
 } from './BitcoinChartsPresenter.styles'
 
+import { KEY_API_HG } from '@env'
+
 import { BitcoinCharts } from '../../components/BitcoinCharts'
 import Stocks from '../../../../services/axios/GetDatas/Stocks'
 import { View } from 'react-native'
@@ -23,7 +25,7 @@ const BitcoinChartsPresenter: React.FC = () => {
   useEffect(() => {
     async function handleCoin() {
       try {
-        const response = await Stocks('/?key=34664f77')
+        const response = await Stocks(`/?key=${KEY_API_HG}`)
 
         const keys: any = Object.entries(response)
         const adapter: any = Object.values(keys[3][1])

@@ -5,6 +5,8 @@ import { Container, TextBody } from './StockScreenPresenter.styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { DetailsCurrencie } from '../../../Base/components/DetailsCurrencie'
 
+import { KEY_API_HG } from '@env'
+
 import Stocks from '../../../../services/axios/GetDatas/Stocks'
 import { Alert } from 'react-native'
 
@@ -27,7 +29,9 @@ const StockScreenPresenter: React.FC = () => {
     setValue('')
 
     try {
-      const stock = await Stocks(`/stock_price?key=34664f77&symbol=${data}`)
+      const stock = await Stocks(
+        `/stock_price?key=${KEY_API_HG}&symbol=${data}`
+      )
 
       const keys: any = Object.entries(stock)
 

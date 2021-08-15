@@ -26,6 +26,20 @@ module.exports = {
       }
     ],
     ['@babel/plugin-proposal-private-methods', { loose: true }],
-    ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+    ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',
+        blocklist: null,
+        allowlist: ['KEY_API_HG'],
+        blacklist: null, // DEPRECATED
+        whitelist: null, // DEPRECATED
+        safe: false,
+        allowUndefined: true,
+        verbose: false
+      }
+    ]
   ]
 }

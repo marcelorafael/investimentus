@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card } from '../../../Base/components/Card'
 import { ChartHeader } from '../../../Base/components/ChartHeader'
 
+import { KEY_API_HG } from '@env'
+
 import {
   Container,
   CenterScroll,
@@ -30,7 +32,7 @@ const CurrencieScreenPresenter: React.FC = ({ navigation }: any) => {
       Keyboard.dismiss()
 
       try {
-        const response = await Stocks('/?key=34664f77')
+        const response = await Stocks(`/?key=${KEY_API_HG}`)
 
         // Datas Stocks
         const keysStocks: any = Object.keys(response.stocks)
